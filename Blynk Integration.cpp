@@ -1,19 +1,21 @@
 #include <Arduino.h>
 #include <WiFi.h>
 /*
-#define BLYNK_TEMPLATE_ID "TM4ycO_"
-#define BLYNK_TEMPLATE_NAME "In4hon"
-#define BLYNK_AUTH_TOKEN "YOUR_TOKEN"*/
+#define BLYNK_TEMPLATE_ID "TMP88ycO_"
+#define BLYNK_TEMPLATE_NAME "Inn8888hon"
+#define BLYNK_AUTH_TOKEN "YO888EN"*/
 
 #define BLYNK_PRINT Serial
 #include <BlynkSimpleEsp32.h>
 
 
 
-char ssid[] = "Ad2";
-char pass[] = "Fdi";
+char ssid[] = "Airtel_Mach2";
+char pass[] = "FN217000_i";
 
 int ledPin = 2;
+//int pirPin = 27;
+//int pirLedPin = 4;   // second LED
 
 BLYNK_WRITE(V0) {
   int value = param.asInt();
@@ -34,6 +36,8 @@ BLYNK_CONNECTED() {
 void setup() {
   Serial.begin(115200);
   pinMode(ledPin, OUTPUT);
+  // pinMode(pirPin, INPUT);
+  //pinMode(pirLedPin, OUTPUT);
 
   WiFi.begin(ssid, pass);
   Serial.print("Connecting to WiFi");
@@ -51,4 +55,19 @@ void setup() {
 
 void loop() {
   Blynk.run();
+  /*
+   int motion = digitalRead(pirPin);
+
+  // Send motion status to Blynk (V2)
+  Blynk.virtualWrite(V2, motion);
+
+  if (motion == HIGH) {
+    Serial.println("🚶 Motion Detected!");
+    digitalWrite(pirLedPin, HIGH);
+  } else {
+    Serial.println("No Motion");
+    digitalWrite(pirLedPin, LOW);
+  }
+
+  delay(500);*/
 }
