@@ -50,5 +50,13 @@ More information about PlatformIO Library Dependency Finder
 platform = espressif32
 board = esp32doit-devkit-v1
 framework = arduino
-monitor_speed=921600
+monitor_speed = 115200
+
+lib_deps = 
+	blynkkk/Blynk@^1.3.2
+
+build_flags =
+	-D BLYNK_TEMPLATE_ID=\"TMPL314GgycO_\"
+	-D BLYNK_TEMPLATE_NAME=\"Innovathon\"
+	-D BLYNK_AUTH_TOKEN=\"VlrqJTEkNrP5pwW8C6JCLCP4XWkBR-bh\"
 ###########
